@@ -73,8 +73,27 @@ namespace Febucci.HierarchyData
         public class SeparatorData
         {
             public bool enabled = true;
-            public string startString = ">";
-            public Color color = new Color(0, 1,1, .15f);
+
+            public class SeparatorGroup
+            {
+                public string startString;
+                public Color color;
+            }
+
+            public SeparatorGroup[] seperator = new[]
+            {
+                new SeparatorGroup
+                {
+                    startString = ">";
+                    color = new Color(0, 1, 1, .15f);
+                }
+
+                new SeparatorGroup()
+                {
+                    startString = "!";
+                    color = new Color(0, .5, 1, .15f)
+                }
+            }
         }
         
         public SeparatorData separator;
